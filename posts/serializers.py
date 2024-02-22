@@ -23,10 +23,11 @@ class PostSerializer(serializers.ModelSerializer):
     def get_is_owner(self, obj):
         request = self.context['request']
         return request.user == obj.owner
-
+   
     class Meta:
         model = Post
         fields = [
-            'id', 'owner', 'is_owner', 'profile_id', 'profile_image', 'created_at', 'updated_at', 'name',
+            'id', 'owner', 'is_owner', 'profile_id',
+            'profile_image', 'created_at', 'updated_at',
             'title', 'content', 'image', 'image_filter'
         ]
